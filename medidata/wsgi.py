@@ -16,4 +16,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'medidata.settings')
 application = get_wsgi_application()
 
 
-app = application # agregar esto para vercel
+application = get_wsgi_application() # agregar esto para vercel
