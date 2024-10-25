@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yyn_47ugp8*fqm=$!h$xzx^qu&k+6tdrl++pn))malugn8tacd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #estaba en True
+DEBUG = True #estaba en True
 
-ALLOWED_HOSTS = ['*.vercel.app', 'medidatadjango.vercel.app']
+ALLOWED_HOSTS = ['*.vercel.app', 'medidatadjango.vercel.app', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
