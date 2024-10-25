@@ -14,6 +14,4 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'medidata.settings')
 
 application = get_wsgi_application()
-
-
-application = get_wsgi_application() # agregar esto para vercel
+ # agregar esto para vercel
