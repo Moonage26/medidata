@@ -1,13 +1,13 @@
 {
 	"builds":[{
-		"src": "medidata/wsgi.py",
+		"src": "manage.py",
 		"use": "@vercel/python",
 		"config": { "maxLambdaSize": "15mb", "runtime": "python3.12.4" }
 	}],
 	"routes": [
 		{
 			"src": "/(.*)",
-			"dest": "medidata/wsgi.py"
+			"dest": "managge.py"
 		}
 	]
 
