@@ -34,15 +34,3 @@ class Paciente(models.Model):
 fields = ['rut','nombre','apellido','fecha_nacimiento','genero','telefono','correo']
 
 
-import logging
-
-class ErrorLoggingMiddleware:
-    def __init__(self, get_response):
-        self.get_response = get_response
-        self.logger = logging.getLogger('django.request')
-
-    def __call__(self, request):
-        response = self.get_response(request)
-        if response.status_code >= 400:
-            self.logger.error(f'Error {response.status_code} en la URL {request.path}')
-        return response
