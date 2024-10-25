@@ -1,6 +1,7 @@
 from django.urls import path
 from django.contrib.auth.views import LogoutView
 from .views import *
+from . import views 
 
 urlpatterns = [
     path('', index, name="index"), # PAGINA DE INICIO
@@ -14,4 +15,5 @@ urlpatterns = [
     path('registrar_paciente/', registrar_paciente, name='registrar_paciente'),
     path('nueva_consulta/', nueva_consulta, name='nueva_consulta'),
     path('listar_pacientes/', listar_pacientes, name='listar_pacientes'),
+    path('get-data/', views.get_supabase_data, name='get_supabase_data'),
 ]

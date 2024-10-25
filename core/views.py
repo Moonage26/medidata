@@ -3,6 +3,9 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import Group
 from .forms import * 
 from django.contrib.auth.decorators import login_required
+from supabase import create_client
+from django.conf import settings
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -73,3 +76,17 @@ def listar_pacientes(request):
 
 def nueva_consulta(request):
     return render(request, 'core/nueva_consulta.html')
+
+#supabase
+
+def get_supabase_data(request):
+    supabase_url = settings.SUPABASE_URL
+    supabase_key = settings.SUPABASE_ANON_KEY
+    supabase = create_client(supabase_url, supabase_key)
+
+    # Realiza una consulta a una tabla de Supabase
+    response = supabase.table("nombre_de_la_tabla").select("*").execute()
+
+    if response.error:
+        return JsonResponse({"error": response.error.message}, status=400)
+    return JsonResponse({"data": response.data}, status=200)

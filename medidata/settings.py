@@ -76,10 +76,28 @@ WSGI_APPLICATION = 'medidata.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': "aws-0-us-west-1.pooler.supabase.com",
+        'NAME': 'postgres',
+        'USER': "postgres.wvaarcihvqqmmpgbfxtr",
+        'PASSWORD': "EUqooUS6SjzsU36P",
+        'PORT': "6543",
     }
 }
+
+# settings.py
+
+SUPABASE_URL = "https://wvaarcihvqqmmpgbfxtr.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind2YWFyY2lodnFxbW1wZ2JmeHRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjk4MjU1MTgsImV4cCI6MjA0NTQwMTUxOH0.3mvl_HSw7VDWEx4n-iLuFwfNeQyaSRpR0Nu7lzm3Dgg"
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 
 
 # Password validation
