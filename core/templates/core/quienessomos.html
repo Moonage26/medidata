@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% block principal %}
+{% load static %}
+
+
+<section class="pb-6">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="image-container">
+            <img src="{% static 'core/assets/img/destacada_home.jpg' %}" class="img-thumbnail" alt="Imagen principal">
+        </div>
+        -->
+        <div class="col-sm-6 mb-7">
+          <div class="row pe-xl-4">
+            <div class="col-lg-5"> <img class="mb-3 w-100" src="../assets/images/portraits/225x313/4.jpg" alt="" /></div>
+            <div class="col">
+              <h5 class="mb-3">Roxany Montenegro</h5>
+              <h6 class="mb-4 ls-2 fw-normal">Programadora &amp; algo</h6>
+              <p class="fw-light text-500">descripcion</div>
+          </div>
+        </div>
+        <div class="col-sm-6 mb-7">
+          <div class="row ps-xl-4">
+            <div class="col-lg-5"> <img class="mb-3 w-100" src="../assets/images/portraits/225x313/2.jpg" alt="" /></div>
+            <div class="col">
+              <h5 class="mb-3">Rodolfo Bueno</h5>
+              <h6 class="mb-4 ls-2 fw-normal">Programador &amp; Algo</h6>
+              <p class="fw-light text-500">Descripcion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

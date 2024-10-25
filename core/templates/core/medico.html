@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+{% block principal %}
+{% load static %}
+
+<div class="mt-3 container">
+    <div class="alert alert-info" role="alert">
+        Bienvenido {{ nombre_usuario }} al panel de control de Medicos
+    </div>
+
+    <div class="row justify-content-around">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Paciente Nuevo</h5>
+                <p class="card-text">Acceda a esta opción para ingresar a un paciente nuevo al sistema</p>
+                <a href="{% url 'registrar_paciente' %}" class="btn btn-primary">Crear Paciente</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Nueva Consulta Paciente</h5>
+                <p class="card-text">Acceda a esta opción para crear una nueva consulta y así actualizar la ficha de una paciente</p>
+                <a href="{% url 'nueva_consulta' %}" class="btn btn-warning">Crear Nueva Atención</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ver Pacientes</h5>
+                <p class="card-text">Acceda a esta opción para ver una lista de los pacientes</p>
+                <a href="{% url 'listar_pacientes' %}" class="btn btn-success">Buscar Paciente</a>
+            </div>
+        </div>
+
+    
+
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Buscar Ficha Paciente</h5>
+            <p class="card-text">Acceda a esta opción para buscar la ficha de un paciente y ver todos sus atenciones</p>
+            <a href="#" class="btn btn-warning">Buscar Ficha</a>
+        </div>
+    </div>
+</div>
+
+    <div class="mt-5 container text-center">
+        {% if user.is_authenticated %}
+            <form id="logout-form" action="{% url 'logout' %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Cerrar Sesión</button>
+            </form>
+        {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

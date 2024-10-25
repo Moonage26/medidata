@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block principal %}
+<div class="mt-5 container">
+    <a class="btn btn-success" href="{% url 'medico' %}">Volver</a>
+</div>
+<div class="container">
+    <form method="POST">
+        <h2>Registro de pacientes</h2>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Rut del Paciente</label>
+            {{ form.rut}}
+        </div>
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Nombre del Paciente</label>
+            {{ form.nombre}}
+        </div>
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Apellido del Paciente</label>
+            {{ form.apellido}}
+        </div>
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Fecha de Nacimiento del Paciente</label>
+            {{ form.fecha_nacimiento}}
+        </div>
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Género del Paciente</label>
+            {{ form.genero}}
+        </div>
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Teléfono del Paciente</label>
+            {{ form.telefono}}
+        </div>
+        <div class="mb-3">
+            <label for="paciente" class="form-label">Correo del Paciente</label>
+            {{ form.correo}}
+        </div>
+        <button class="btn btn-success" type="submit">Agregar</button>
+    </form>
+</div>
+{% endblock %}

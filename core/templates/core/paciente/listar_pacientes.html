@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block principal %}
+<h2>¡Lista de pacientes!</h2>
+
+<div class="mt-5 container">
+    <a class="btn btn-success" href="{% url 'medico' %}">Volver</a>
+</div>
+
+<div class="mt-5 container">
+    <table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <td>Rut</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Fecha Nacimiento</td>
+            <td>Genero</td>
+            <td>Telefono</td>
+            <td>Correo</td>
+            <td>Opciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for aux in lista %}
+            <tr>
+                <td>{{ aux.rut}}</td>
+                <td>{{ aux.nombre}}</td>
+                <td>{{ aux.apellido}}</td>
+                <td>{{ aux.fecha_nacimiento}}</td>
+                <td>{{ aux.genero}}</td>
+                <td>{{ aux.telefono}}</td>
+                <td>{{ aux.correo}}</td>
+                <td>
+                    <a href="#" class="btn btn-info">Modificar</a>
+                    <a href="#" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block articulo %}Contacto{% endblock %}
